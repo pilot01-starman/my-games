@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://3e731vmctdg5"]
+
+[ext_resource type="Texture2D" uid="uid://e1drkbdgnvnf" path="res://Assets/table.png" id="1_4w2cu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ntcp"]
+size = Vector2(254, 219)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvcs6"]
+size = Vector2(43, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edres"]
+size = Vector2(319, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7smmd"]
+size = Vector2(307, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgf8b"]
+size = Vector2(45, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrfkq"]
+size = Vector2(312.5, 230)
+
+[node name="Table" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-1, 10)
+texture = ExtResource("1_4w2cu")
+centered = false
+
+[node name="Cushions" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cushions"]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(109, 77, 87, 55, 87, -144, 561, -145, 563, 56, 555, 77)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Cushions"]
+position = Vector2(527, 2)
+polygon = PackedVector2Array(104, 76, 95, 55, 97, -150, 576, -148, 576, 56, 555, 76)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Cushions"]
+polygon = PackedVector2Array(1122, 116, 1144, 96, 1436, 97, 1437, 592, 1144, 582, 1122, 560)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Cushions"]
+polygon = PackedVector2Array(1102, 621, 1082, 600, 630, 600, 622, 621, 631, 767, 1107, 761)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Cushions"]
+polygon = PackedVector2Array(565, 621, 557, 600, 111, 601, 88, 622, 90, 769, 564, 767)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Cushions"]
+polygon = PackedVector2Array(56, 581, 77, 560, 78, 117, 56, 96, -99, 95, -95, 582)
+
+[node name="Pockets" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(-57, -30.5)
+shape = SubResource("RectangleShape2D_3ntcp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(591.5, -43)
+shape = SubResource("RectangleShape2D_dvcs6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(1280.5, -40)
+shape = SubResource("RectangleShape2D_edres")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(-81.5, 705)
+shape = SubResource("RectangleShape2D_7smmd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(593.5, 718.5)
+shape = SubResource("RectangleShape2D_xgf8b")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Pockets"]
+position = Vector2(1276.75, 720)
+shape = SubResource("RectangleShape2D_qrfkq")

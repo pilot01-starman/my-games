@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://clxg4trqk1ayl"]
+
+[ext_resource type="FontFile" uid="uid://b1nxv5gjics3u" path="res://Assets/PixelOperator8-Bold.ttf" id="1_ofpue"]
+[ext_resource type="FontFile" uid="uid://b1dmnuos85vcw" path="res://Assets/PixelOperator8.ttf" id="2_rmkrv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s64s"]
+bg_color = Color(0.027451, 0.219608, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eojp5"]
+bg_color = Color(0.117647, 0.494118, 0.709804, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p7ke"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb8xl"]
+bg_color = Color(0.117188, 0.492188, 0.707031, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="ResultsPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -150.0
+offset_right = 350.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2s64s")
+
+[node name="ResultLabel" type="Label" parent="ResultsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -70.0
+offset_right = 246.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ofpue")
+theme_override_font_sizes/font_size = 77
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ResultsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -90.0
+offset_right = 125.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_rmkrv")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_eojp5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2p7ke")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eb8xl")
+text = "RESTART"

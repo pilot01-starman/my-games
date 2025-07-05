@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://drass7ak4emfl"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_2tdfi"]
+[ext_resource type="PackedScene" uid="uid://3e731vmctdg5" path="res://Scenes/table.tscn" id="1_a5m7f"]
+[ext_resource type="PackedScene" uid="uid://dg2vui0plu1m8" path="res://Scenes/pool_ball.tscn" id="2_hupmb"]
+[ext_resource type="PackedScene" uid="uid://cmti8hcri5kjg" path="res://Scenes/cue.tscn" id="4_hjlpj"]
+[ext_resource type="Script" path="res://Scenes/PowerBar.gd" id="5_0t1hj"]
+[ext_resource type="PackedScene" uid="uid://clxg4trqk1ayl" path="res://Scenes/hud.tscn" id="6_4rlqw"]
+[ext_resource type="FontFile" uid="uid://b1dmnuos85vcw" path="res://Assets/PixelOperator8.ttf" id="6_61ksg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24ajd"]
+bg_color = Color(0.0117647, 0.054902, 0.105882, 0.282353)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt04a"]
+bg_color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvowo"]
+bg_color = Color(0.811765, 0.533333, 0, 1)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_2tdfi")
+ball_scene = ExtResource("2_hupmb")
+
+[node name="Table" parent="." instance=ExtResource("1_a5m7f")]
+
+[node name="PottedPanel" type="Panel" parent="."]
+offset_top = 688.0
+offset_right = 1200.0
+offset_bottom = 778.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_24ajd")
+
+[node name="Cue" parent="." instance=ExtResource("4_hjlpj")]
+
+[node name="PowerBar" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = 140.0
+offset_top = 148.0
+offset_right = 240.0
+offset_bottom = 178.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yt04a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uvowo")
+show_percentage = false
+script = ExtResource("5_0t1hj")
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 975.0
+offset_top = 689.0
+offset_right = 1158.0
+offset_bottom = 741.0
+theme_override_fonts/font = ExtResource("6_61ksg")
+theme_override_font_sizes/font_size = 30
+text = "LIVES: 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShotsLabel" type="Label" parent="."]
+offset_left = 975.0
+offset_top = 726.0
+offset_right = 1165.0
+offset_bottom = 778.0
+theme_override_fonts/font = ExtResource("6_61ksg")
+theme_override_font_sizes/font_size = 30
+text = "SHOTS: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hud" parent="." instance=ExtResource("6_4rlqw")]
+process_mode = 2
+
+[connection signal="shoot" from="Cue" to="." method="_on_cue_shoot"]
