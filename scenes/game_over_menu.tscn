@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjnaaeordu7i0"]
+
+[ext_resource type="Script" path="res://scenes/game_over_menu.gd" id="1_b4ahk"]
+[ext_resource type="FontFile" uid="uid://r5ttqaxnuvgk" path="res://assets/MaldiniBold.ttf" id="2_6vgr5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmgkm"]
+bg_color = Color(0.0117647, 0.266667, 0.466667, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 20
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2ec2"]
+bg_color = Color(0.00392157, 0.168627, 0.309804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jipxm"]
+bg_color = Color(0.635294, 0.811765, 0.996078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nt8r"]
+bg_color = Color(0.00390625, 0.167969, 0.308594, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_b4ahk")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmgkm")
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -125.0
+offset_right = 153.5
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("2_6vgr5")
+theme_override_font_sizes/font_size = 68
+text = "GAME OVER!"
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_right = 113.5
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6vgr5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2ec2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jipxm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2nt8r")
+text = "Play Agin?"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

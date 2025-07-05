@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0msfxqjvsyjs"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_pr72j"]
+[ext_resource type="PackedScene" uid="uid://52liqugkbwlt" path="res://scenes/snake_segment.tscn" id="2_7wtvd"]
+[ext_resource type="Texture2D" uid="uid://bj2ambwei5ogi" path="res://assets/bg.png" id="2_xhs0p"]
+[ext_resource type="PackedScene" uid="uid://54ehq5x3h52h" path="res://scenes/hub.tscn" id="3_qexk8"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_pr72j")
+snake_scene = ExtResource("2_7wtvd")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(500, 550)
+texture = ExtResource("2_xhs0p")
+
+[node name="hub" parent="." instance=ExtResource("3_qexk8")]
