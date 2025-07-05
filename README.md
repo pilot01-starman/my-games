@@ -1,2 +1,2 @@
 # my-games
-rhe collection of difrent games I have done
+the collection of difrent games I have done
